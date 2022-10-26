@@ -1,0 +1,33 @@
+{
+    "name": "neriba/laravel-insert-update-delete-ids",
+    "description": "Data handling after insert, delete, update",
+    "homepage": "https://github.com/NerijusBartosevicius/laravel-insert-update-delete-ids",
+    "keywords": [
+        "laravel"
+    ],
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nerijus Bartosevicius",
+            "email": "nerijus.bartosevicius@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php" : "^7.3|^8.0|^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "NeriBa\\IudIds\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NeriBa\\IudIds\\IudIdsServiceProvider"
+            ]
+        }
+    }
+}

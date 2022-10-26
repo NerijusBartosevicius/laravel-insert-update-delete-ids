@@ -1,4 +1,4 @@
-# Laravel Get data after  insert, update and delete
+# Laravel data handling after insert, delete and update
 
 ## Instalation
 

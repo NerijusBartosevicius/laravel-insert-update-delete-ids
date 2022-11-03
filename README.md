@@ -1,5 +1,12 @@
 # Laravel data handling after insert, delete and update
 
+<p align="left">
+<a href="https://packagist.org/packages/neriba/laravel-insert-update-delete-ids"><img src="https://img.shields.io/packagist/v/neriba/laravel-insert-update-delete-ids.svg?style=flat-square" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/neriba/laravel-insert-update-delete-ids"><img src="https://img.shields.io/packagist/dt/neriba/laravel-insert-update-delete-ids.svg?style=flat-square" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/neriba/laravel-insert-update-delete-ids"><img src="https://img.shields.io/packagist/l/neriba/laravel-insert-update-delete-ids" alt="License"></a>
+</p>
+
+
 ## Instalation
 
 To install via composer:

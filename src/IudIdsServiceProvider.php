@@ -30,7 +30,7 @@ class IudIdsServiceProvider extends ServiceProvider
                 $this->applyBeforeQueryCallbacks();
 
                 return $this->connection->select(
-                    $this->grammar->compileInsert($this, $values) . ' returning ' . implode(',', $returning),
+                    $this->grammar->compileInsert($this, $values).' returning '.implode(',', $returning),
                     $this->cleanBindings(Arr::flatten($values, 1))
                 );
             }
@@ -46,7 +46,7 @@ class IudIdsServiceProvider extends ServiceProvider
                 $this->applyBeforeQueryCallbacks();
 
                 return $this->connection->select(
-                    $this->grammar->compileUpdate($this, $values) . ' returning ' . implode(',', $returning),
+                    $this->grammar->compileUpdate($this, $values).' returning '.implode(',', $returning),
                     $this->cleanBindings($this->grammar->prepareBindingsForUpdate($this->bindings, $values))
                 );
             }
@@ -60,17 +60,16 @@ class IudIdsServiceProvider extends ServiceProvider
                 }
 
                 if (!is_null($id)) {
-                    $this->where($this->from . '.id', '=', $id);
+                    $this->where($this->from.'.id', '=', $id);
                 }
 
                 $this->applyBeforeQueryCallbacks();
 
                 return $this->connection->select(
-                    $this->grammar->compileDelete($this) . ' returning ' . implode(',', $returning),
+                    $this->grammar->compileDelete($this).' returning '.implode(',', $returning),
                     $this->cleanBindings($this->grammar->prepareBindingsForDelete($this->bindings))
                 );
             }
         );
     }
-
 }

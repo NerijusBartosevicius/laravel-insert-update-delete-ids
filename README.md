@@ -75,6 +75,14 @@ DB::table('roles')->deleteGetIds(3657,['id as role_id', 'name']);
 DB::table('roles')->deleteGetIds(3657,['*']);
 ```
 
+## For databases
+
+<ol>
+    <li>PostgreSQL</li>
+    <li>SQLite</li>    
+    <li>MariaDB</li>    
+</ol>
+
 # License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.

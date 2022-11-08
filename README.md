@@ -17,7 +17,9 @@ composer require neriba/laravel-insert-update-delete-ids
 
 ## What It Does
 
-This package allows you to get data after event with database.
+This package allows you to get data after event with database. 
+
+**Supports MariaDB, PostgreSQL and SQLite databases.**
 
 `insertGetIds method inserts and returns array of data. By default returning array with id value, but you can change to any existing fields in the table.`
 

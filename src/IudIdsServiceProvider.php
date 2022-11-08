@@ -13,6 +13,8 @@ class IudIdsServiceProvider extends ServiceProvider
         Builder::macro(
             'insertGetIds',
             function (array $values, $returning = ['id']) {
+                $this->isSupportReturning();
+
                 if (empty($values) || empty($returning)) {
                     return [];
                 }
@@ -39,6 +41,8 @@ class IudIdsServiceProvider extends ServiceProvider
         Builder::macro(
             'updateGetIds',
             function (array $values, $returning = ['id']) {
+                $this->isSupportReturning();
+
                 if (empty($values) || empty($returning)) {
                     return [];
                 }
@@ -55,6 +59,8 @@ class IudIdsServiceProvider extends ServiceProvider
         Builder::macro(
             'deleteGetIds',
             function ($id = null, $returning = ['id']) {
+                $this->isSupportReturning();
+
                 if (empty($returning)) {
                     return [];
                 }
@@ -71,5 +77,18 @@ class IudIdsServiceProvider extends ServiceProvider
                 );
             }
         );
+
+        Builder::macro(
+            'isSupportReturning',
+            function () {
+                $pdoAttributes = $this->connection->getPdo();
+
+                if (!str_contains($pdoAttributes->getAttribute(\PDO::ATTR_SERVER_VERSION), 'MariaDB')
+                    && !in_array($pdoAttributes->getAttribute(\PDO::ATTR_DRIVER_NAME), ['pgsql', 'sqlite'])) {
+                    throw new \Exception('Your database does not support returning functionality.');
+                }
+            }
+        );
     }
+
 }
